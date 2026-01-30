@@ -6,7 +6,7 @@ export default function AboutSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="w-full bg-[#E8E2D2] rounded-3xl p-6 md:p-8 border border-sand transition-all duration-300">
+    <section className="w-full bg-[#BF827D] rounded-3xl p-6 md:p-10 border border-sand transition-all duration-300">
       
       {/* Cabeçalho da caixa(sempre visível) */}
       <div 
@@ -14,11 +14,11 @@ export default function AboutSection() {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex flex-col gap-1">
-          <h3 className="text-xl md:text-2xl font-bold text-coffee">
+          <h3 className="text-xl md:text-2xl font-bold text-[#554236]">
             Nossa Essência & Horários
           </h3>
           {/* Horário de Funcionamento */}
-          <p className="text-sm font-medium text-rose uppercase tracking-wide">
+          <p className="text-sm font-medium text-[#ffe6db] uppercase tracking-wide">
             Seg-Sáb 8h-18h | Dom 9h-15h
                            
           </p>
@@ -26,7 +26,7 @@ export default function AboutSection() {
 
         {/* Botão Seta  */}
         <button 
-          className={`w-10 h-10 flex items-center justify-center rounded-full bg-coffee text-[#BF827D] transition-transform duration-300 ${
+          className={`w-10 h-10 flex items-center justify-center rounded-full  text-white transition-transform duration-300 ${
             isOpen ? "rotate-180 bg-rose" : ""
           }`}
         >
