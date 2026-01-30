@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import AboutSection from "@/componentes/descrição";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-cream flex flex-col p-6 text-coffee">
+    <div className="min-h-screen bg-[#E8E2D2] flex flex-col p-6 text-coffee">
       
       {/* --- 1. CABEÇALHO (Logo + Navegação Rápida) --- */}
       <header className="flex flex-col md:flex-row items-center gap-6 mb-10">
@@ -68,6 +69,9 @@ export default function Home() {
                 </div>
             </div>
         </section>
+
+        {/* Descrição(completo dentro de componentes) */}
+        <AboutSection />
       </main>
 
 
