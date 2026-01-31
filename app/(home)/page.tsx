@@ -12,7 +12,7 @@ export default function Home() {
         {/* Logo */}
           <div className="relative w-40 h-16 md:w-52 md:h-20 ml-8"> 
             <Image
-            src="/logo.png" 
+            src="/logocg.png" 
             alt="CG Café & Co."
             fill 
             className="object-contain object-center md:object-start"
@@ -62,7 +62,7 @@ export default function Home() {
                     </p>
                     <Link
                         href="/comidas" // Redireciona para o menu do item
-                        className="inline-block w-full md:w-auto px-8 py-3 bg-coffee text-white rounded-xl font-semibold hover:bg-[#f07f83] hover:text-[#95cfb7] transition-colors shadow-lg shadow-coffee/20"
+                        className="inline-block w-full md:w-auto px-8 py-3 bg-coffee text-white rounded-xl font-semibold hover:bg-[#f07f83] transition-colors shadow-lg shadow-coffee/20"
                     >
                         Experimentar Agora
                     </Link>
