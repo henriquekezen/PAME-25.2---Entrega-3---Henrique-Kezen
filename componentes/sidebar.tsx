@@ -1,5 +1,6 @@
 "use client"; 
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,24 +10,45 @@ export default function Sidebar() {
   return (
     <aside className="w-26 md:w-64 bg-[#E8E2D2] border-r border-sand/30 flex flex-col p-2 md:p-8 ">
       
-      {/*Título do Menu */}
-      <header className="mb-12">
-        <h2 className="text-3xl font-bold text-rose">Clean Girl</h2>
-        <p className="text-xs text-coffee uppercase tracking-widest mt-1">Menu Digital</p>
+      {/* Título do Menu */}
+      <header className="mb-12 flex flex-col items-center">
+  
+        {/* Imagem funciona como link para a home */}
+        <Link href="/">
+          <div className="relative w-20 h-30 md:w-40 md:h-40 cursor-pointer hover:opacity-80 transition-opacity"> 
+          <Image 
+            src="/marca.png"   
+            alt="Marca d'água Girl"
+            fill                
+            className="object-contain" 
+          />
+          </div>
+        </Link>
+
+        <p className="text-xs text-coffee uppercase tracking-widest -mt-2.5">
+          Menu Digital
+        </p>
       </header>
 
       {/*Navegação */}
       <main>
       <nav className="flex-1">
-        <ul className="space-y-4">
+        <ul className="space-y-5">
           
           {/*Voltar ao Início */}
           <li>
             <Link 
               href="/" 
-              className="block  rounded-xl text-coffee hover:bg-cream transition-colors font-medium"
+              className="px-4 py-2 rounded-xl hover:bg-cream transition-colors flex items-center justify-center" 
             >
-               Voltar ao Início
+            <div className="relative w-6 h-6 mb-[-13]"> 
+              <Image 
+                src="/home.png"  
+                alt="Voltar ao Início"
+                fill
+                className="object-contain" 
+              />
+            </div>
             </Link>
           </li>
 
