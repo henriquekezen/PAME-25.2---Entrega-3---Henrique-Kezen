@@ -9,7 +9,7 @@ export default function MenuLayout({
   return (
     
     //Cuidados com scroll incorreto no iphone
-    <div className="flex h-screen overflow-hidden bg-cream">
+    <div className="flex h-dvh overflow-hidden bg-[#E8E2D2] overscroll-none">
       
       {/* Barra Lateral Fixa */}
       <Sidebar />
