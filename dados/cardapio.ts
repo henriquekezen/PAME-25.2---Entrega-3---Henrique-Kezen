@@ -1,5 +1,6 @@
 
 //Define o formato que todo item deve seguir
+//Tratando o preço como número para facilitar operações futuras como ordenar por preço.
 export type Produto = {
 
   nome: string;

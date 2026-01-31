@@ -7,15 +7,16 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 min-h-screen bg-white border-r border-sand/30 flex flex-col sticky top-0 p-8">
+    <aside className="w-26 md:w-64 min-h-screen bg-white border-r border-sand/30 flex flex-col sticky top-0 p-2 md:p-8">
       
       {/*Título do Menu */}
-      <div className="mb-12">
+      <header className="mb-12">
         <h2 className="text-3xl font-bold text-rose">Clean Girl</h2>
         <p className="text-xs text-coffee uppercase tracking-widest mt-1">Menu Digital</p>
-      </div>
+      </header>
 
       {/*Navegação */}
+      <main>
       <nav className="flex-1">
         <ul className="space-y-4">
           
@@ -23,7 +24,7 @@ export default function Sidebar() {
           <li>
             <Link 
               href="/" 
-              className="block px-4 py-3 rounded-xl text-coffee hover:bg-cream transition-colors font-medium"
+              className="block  rounded-xl text-coffee hover:bg-cream transition-colors font-medium"
             >
                Voltar ao Início
             </Link>
@@ -44,11 +45,12 @@ export default function Sidebar() {
           />
         </ul>
       </nav>
+      </main>
 
       {/*Rodapé */}
-      <div className="text-xs text-coffee/40 mt-auto">
+      <footer className="text-xs text-coffee/40 mt-auto">
         &copy; 2026 Café & Co.
-      </div>
+      </footer>
     </aside>
   );
 }
@@ -59,11 +61,6 @@ function SidebarLink({ href, label, active }: { href: string; label: string; act
     <li>
       <Link
         href={href}
-        className={`block px-4 py-3 rounded-xl font-bold transition-all ${
-          active 
-            ? "bg-rose text-white shadow-md shadow-rose/20" // Estilo ao selecionar
-            : "text-coffee hover:bg-cream hover:text-rose"   // Estilo padrão
-        }`}
       >
         {label}
       </Link>
