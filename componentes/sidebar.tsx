@@ -7,7 +7,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-26 md:w-64 min-h-screen bg-white border-r border-sand/30 flex flex-col sticky top-0 p-2 md:p-8">
+    <aside className="w-26 md:w-64 bg-[#E8E2D2] border-r border-sand/30 flex flex-col p-2 md:p-8">
       
       {/*Título do Menu */}
       <header className="mb-12">

@@ -5,7 +5,7 @@ export default function ComidasPage() {
   const comidas = menuItems.filter((item) => item.categoria === "comidas");
 
   return (
-    <section className="p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">
+    <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">
       
       {/* Título reservado pra imagem */}
       <header className="w-full h-48 md:h-64 bg-rose/10 rounded-3xl mb-10 flex items-center justify-center border-2 border-rose/20 border-dashed">

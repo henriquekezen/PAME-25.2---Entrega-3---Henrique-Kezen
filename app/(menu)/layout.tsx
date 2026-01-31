@@ -8,16 +8,18 @@ export default function MenuLayout({
 }) {
   return (
     
-    <div className="flex min-h-screen bg-cream">
+    //Cuidados com scroll incorreto no iphone
+    <div className="flex h-screen overflow-hidden bg-cream">
       
       {/* Barra Lateral Fixa */}
       <Sidebar />
       
-      {/* Área onde as páginas de Comidas/Bebidas vão aparecer */}
-      <main className="flex-1">
+      
+      <main className="flex-1 overflow-y-auto">
         {children}
       </main>
       
     </div>
   );
 }
+
