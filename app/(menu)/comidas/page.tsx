@@ -1,4 +1,5 @@
 import { menuItems } from "@/dados/cardapio";
+import Link from "next/link";
 
 export default function ComidasPage() {
   // Filtra apenas o que é comida
@@ -19,8 +20,10 @@ export default function ComidasPage() {
           <div 
             key={item.nome} 
             className="group bg-white p-5 rounded-3xl shadow-sm border border-sand/30 hover:shadow-md hover:border-rose/30 transition-all duration-300 flex flex-col" 
-        > 
-            
+        >   
+            {/*Transforma o nome e a foto em clicavéis */}
+            <Link href={`/comidas/${item.nome}`}>
+
             {/* Espaço reservado para Imagem do Produto */}
             <div className="relative w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex items-center justify-center overflow-hidden">
                 <span className="text-4xl opacity-20 group-hover:scale-110 transition-transform duration-500">
@@ -40,7 +43,7 @@ export default function ComidasPage() {
                     R$ {item.preco.toFixed(2).replace('.', ',')}
                 </span>
             </div>
-
+            </Link>
           </div>
         ))}
 

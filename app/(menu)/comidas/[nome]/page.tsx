@@ -1,8 +1,11 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
 
-export default function DetalheComida({ params }: { params: { nome: string } }) {
-  const nomeDecodificado = decodeURIComponent(params.nome);
+export default async function DetalheComida({ params }: { params: Promise<{ nome: string }> }) {
+
+    const { nome } = await params;
+
+  const nomeDecodificado = decodeURIComponent(nome);
   const produto = menuItems.find((item) => item.nome === nomeDecodificado);
 
   if (!produto) return <div>Produto não encontrado</div>;
@@ -27,6 +30,7 @@ export default function DetalheComida({ params }: { params: { nome: string } }) 
             <p className="text-coffee/70 text-lg leading-relaxed mb-8">{produto.descricao}</p>
             
             {/* Preço e Botão Adicionar */}
+            {/*Adicionar será usado para criar os favoritos */}
             <div className="flex items-center justify-between border-t border-sand/20 pt-6">
                 <span className="text-3xl font-bold text-rose">R$ {produto.preco.toFixed(2).replace('.', ',')}</span>
                 <button className="px-8 py-3 bg-coffee text-white rounded-xl font-bold hover:bg-rose transition-colors shadow-lg shadow-coffee/20">Adicionar</button>

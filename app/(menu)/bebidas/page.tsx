@@ -1,4 +1,5 @@
 import { menuItems } from "@/dados/cardapio";
+import Link from "next/link";
 
 export default function BebidasPage() {
   // Filtra apenas o que é bebida
@@ -21,6 +22,8 @@ export default function BebidasPage() {
             key={item.nome} // Usando o Nome como ID 
             className="group bg-white p-5 rounded-3xl shadow-sm border border-sand/30 hover:shadow-md hover:border-coffee/30 transition-all duration-300 flex flex-col"
           >
+            {/*Transforma o nome e a foto em clicavéis */}
+            <Link href={`/bebidas/${item.nome}`}>
             
             {/* Espaço reservado para Imagem do Produto */}
             <div className="relative w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex items-center justify-center overflow-hidden">
@@ -41,7 +44,7 @@ export default function BebidasPage() {
                     R$ {item.preco.toFixed(2).replace('.', ',')}
                 </span>
             </div>
-
+            </Link>
           </div>
         ))}
 

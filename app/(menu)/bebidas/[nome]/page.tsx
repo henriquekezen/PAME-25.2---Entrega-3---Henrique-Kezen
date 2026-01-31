@@ -1,8 +1,11 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
 
-export default function DetalheBebida({ params }: { params: { nome: string } }) {
-  const nomeDecodificado = decodeURIComponent(params.nome);
+export default async function DetalheBebida({ params }: { params: Promise<{ nome: string }> }) {
+
+    const { nome } = await params;
+
+  const nomeDecodificado = decodeURIComponent(nome);
   const produto = menuItems.find((item) => item.nome === nomeDecodificado);
 
   if (!produto) return <div>Produto não encontrado</div>;
