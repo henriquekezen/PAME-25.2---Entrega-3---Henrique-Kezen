@@ -22,7 +22,7 @@ export default function BotaoAdicionar({ nome }: { nome: string }) {
     <button 
         onClick={handleClick}
         className={`
-            px-8 py-4 rounded-2xl font-bold transition-all shadow-lg 
+            px-2 py-2 md:px-8 md:py-4 rounded-2xl font-bold transition-all shadow-lg 
             flex-1 md:flex-none w-full md:w-auto
             ${jaEstaSalvo 
                 ? "bg-green-600 text-white hover:bg-green-700 shadow-green-600/20" // Estilo se já estiver salvo

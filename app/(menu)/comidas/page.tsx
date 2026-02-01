@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ComidasPage() {
   // Filtra apenas o que é comida
-  const comidas = menuItems.filter((item) => item.categoria === "comidas");
+  const comidas = menuItems.filter((item) => item.categoria === "comida");
 
   return (
     <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">

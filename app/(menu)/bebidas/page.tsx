@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function BebidasPage() {
   // Filtra apenas o que é bebida
-  const bebidas = menuItems.filter((item) => item.categoria === "bebidas");
+  const bebidas = menuItems.filter((item) => item.categoria === "bebida");
 
   return (
     <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">

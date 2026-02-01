@@ -46,35 +46,42 @@ export default function FavoritosPage() {
     return (
     <div className="p-6 md:p-12 max-w-7xl mx-auto animate-fade-in">
       
-      {/* Cabeçalho */}
-      <header className="flex items-center gap-4 mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-rose">Seus Favoritos</h1>
-      </header>
+      {/* Título reservado pra imagem */}
+        <header className="relative overflow-hidden w-full h-48 md:h-64 bg-rose/10 rounded-3xl mb-10 flex items-center justify-center border-2 border-rose/20 border-dashed">
+            <Image
+                src="/favoritos.png" 
+                alt="título da página de favoritos."
+                fill
+                className="object-cover object-center md:object-start"
+                priority 
+                />
+        </header>
 
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         {produtosFavoritos.map((item) => {
           
           // Define o destino por meio da categoria do item
-          const linkHref = item.categoria === "bebidas" 
+          const linkHref = item.categoria === "bebida" 
              ? `/bebidas/${item.nome}` 
              : `/comidas/${item.nome}`;
         
              {/*Informações dos itens favoritos */}
           return (
+            
             <Link 
                 key={item.nome} 
                 href={linkHref}
                 className="group bg-white p-5 rounded-3xl shadow-sm border border-sand/30 hover:shadow-lg hover:border-rose/30 transition-all duration-300 flex flex-col items-center text-center"
             >
                 {/* Foto */}
-                <div className="relative w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex items-center justify-center overflow-hidden mx-auto">
+                <div className="relative w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex items-center justify-center overflow-hidden">
                     <Image 
                       src={item.imagem}
                       alt={item.nome}
                       fill
-                      className="object-contain group-hover:scale-110 transition-transform duration-500 p-4"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </div>
 
