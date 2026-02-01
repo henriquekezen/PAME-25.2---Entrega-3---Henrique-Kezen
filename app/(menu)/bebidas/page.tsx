@@ -2,6 +2,7 @@ import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
 import Image from "next/image";
 
+
 export default function BebidasPage() {
   // Filtra apenas o que é bebida
   const bebidas = menuItems.filter((item) => item.categoria === "bebidas");
@@ -18,7 +19,7 @@ export default function BebidasPage() {
         className="object-cover object-center md:object-start"
         priority 
       />
-       
+
 
       </header>
 

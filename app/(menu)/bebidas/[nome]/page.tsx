@@ -1,6 +1,7 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
 import Image from "next/image";
+import BotaoFavoritar from "@/componentes/botaofavorito";
 
 export default async function DetalheBebida({ params }: { params: Promise<{ nome: string }> }) {
 
@@ -37,11 +38,11 @@ export default async function DetalheBebida({ params }: { params: Promise<{ nome
             <h1 className="text-3xl md:text-4xl font-bold text-coffee mb-4 leading-tight">{produto.nome}</h1>
             <p className="text-coffee/70 text-lg leading-relaxed mb-8">{produto.descricao}</p>
             
-            {/* Preço e Botão Adicionar */}
-            {/*Adicionar será usado para criar os favoritos */}
+            {/* Preço e Botão Favoritar */}
+            
             <div className="flex items-center justify-between border-t border-sand/20 pt-6">
                 <span className="text-3xl font-bold text-rose">R$ {produto.preco.toFixed(2).replace('.', ',')}</span>
-                <button className="px-8 py-3 bg-coffee text-white rounded-xl font-bold hover:bg-rose transition-colors shadow-lg shadow-coffee/20">Adicionar</button>
+                <BotaoFavoritar nome={produto.nome} />
             </div>
         </div>
       </div>

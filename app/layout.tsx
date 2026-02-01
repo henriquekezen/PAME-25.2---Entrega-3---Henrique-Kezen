@@ -39,7 +39,6 @@ export default function RootLayout({
         <FavoritesProvider>
           {children}
         </FavoritesProvider>
-        {children}
       </body>
     </html>
   );
