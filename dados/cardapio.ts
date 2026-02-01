@@ -54,42 +54,42 @@ export const menuItems: Produto[] = [
     nome: "Avocado Toast",
     preco: 24.90,
     categoria: "comidas",
-    imagem: "",
+    imagem: "/comidas/avocado.jpg",
     descricao: "Pão de fermentação natural, creme de abacate temperado, tomatinhos confit e sementes."
   },
   {
     nome: "Croissant de Amêndoas",
     preco: 19.50,
     categoria: "comidas",
-    imagem: "",
+    imagem: "/comidas/croissant.jpg",
     descricao: "Massa folhada francesa recheada e coberta com creme de amêndoas laminadas."
   },
   {
     nome: "Toast Caprese",
     preco: 22.00,
     categoria: "comidas",
-    imagem: "",
+    imagem: "/comidas/toast.jpg",
     descricao: "Muçarela de búfala, pesto fresco da casa e tomate no pão rústico."
   },
   {
     nome: "Pão de Queijo da Serra (Cesta)",
     preco: 14.00,
     categoria: "comidas",
-    imagem: "",
+    imagem: "/comidas/paodequeijo.jpg",
     descricao: "6 unidades de pão de queijo feitos com queijo da Serra da Canastra curado."
   },
   {
     nome: "Cheesecake de Frutas Vermelhas",
     preco: 21.00,
     categoria: "comidas",
-    imagem: "",
+    imagem: "/comidas/cheesecake.jpg",
     descricao: "Base crocante de biscoito, creme de queijo denso e geleia artesanal no topo."
   },
   {
     nome: "Red Velvet Clean",
     preco: 18.90,
     categoria: "comidas",
-    imagem: "",
+    imagem: "/dia.jpg",
     descricao: "A combinação perfeita entre suavidade e sabor. Massa aveludada com toque da casa."
   },
 ];

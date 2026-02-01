@@ -1,5 +1,6 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BebidasPage() {
   // Filtra apenas o que é bebida
@@ -7,12 +8,19 @@ export default function BebidasPage() {
 
   return (
     <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">
-      
-      {/* Título reservado pra imagem*/}
-      
-      <div className="w-full h-48 md:h-64  rounded-3xl mb-10 flex items-center justify-center border-2 border-coffee/10 border-dashed">
-        
-      </div>
+
+      {/* Títulobebidas */}
+      <header className="relative overflow-hidden w-full h-48 md:h-64 bg-rose/10 rounded-3xl mb-10 flex items-center justify-center border-2 border-rose/20 border-dashed">
+      <Image
+        src="/bebe.png" 
+        alt="título da página de bebidas."
+        fill
+        className="object-cover object-center md:object-start"
+        priority 
+      />
+       
+
+      </header>
 
       {/* Itens */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,5 +1,6 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ComidasPage() {
   // Filtra apenas o que é comida
@@ -9,7 +10,17 @@ export default function ComidasPage() {
     <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">
       
       {/* Título reservado pra imagem */}
-      <header className="w-full h-48 md:h-64 bg-rose/10 rounded-3xl mb-10 flex items-center justify-center border-2 border-rose/20 border-dashed">
+      <header className="relative overflow-hidden w-full h-48 md:h-64 bg-rose/10 rounded-3xl mb-10 flex items-center justify-center border-2 border-rose/20 border-dashed">
+        
+
+            <Image
+              src="/come.png" 
+              alt="título da página de comidas."
+              fill
+              className="object-cover object-center md:object-start"
+              priority 
+            />
+       
 
       </header>
 
@@ -26,11 +37,16 @@ export default function ComidasPage() {
 
             {/* Espaço reservado para Imagem do Produto */}
             <div className="relative w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex items-center justify-center overflow-hidden">
-                <span className="text-4xl opacity-20 group-hover:scale-110 transition-transform duration-500">
-                  fotinha maneira
-                </span>
       
-            </div>
+              <Image 
+                src={item.imagem}      
+                alt={item.nome}       
+                fill                  
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+      
+  </div>
 
             {/* Informações do Item */}
             <div className="flex flex-col gap-1">
