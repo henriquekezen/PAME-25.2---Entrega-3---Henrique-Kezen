@@ -35,10 +35,13 @@ export default function BebidasPage() {
             
             {/* Espaço reservado para Imagem do Produto */}
             <div className="relative w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex items-center justify-center overflow-hidden">
-                <span className="text-4xl opacity-20 group-hover:scale-110 transition-transform duration-500">
-                    fotinha maneira
-                </span>
-                
+              <Image 
+                src={item.imagem}      
+                alt={item.nome}       
+                fill                  
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
             </div>
 
             {/* Informações do Item */}

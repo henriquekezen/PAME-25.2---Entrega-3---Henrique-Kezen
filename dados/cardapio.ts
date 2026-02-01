@@ -17,35 +17,35 @@ export const menuItems: Produto[] = [
     nome: "Iced Matcha Latte",
     preco: 18.90,
     categoria: "bebidas",
-    imagem:  "",// Imagens vão ser adicionadas depois
+    imagem:  "/bebidas/iced.jpg",
     descricao: "Chá verde cerimonial, leite vaporizado e um toque de baunilha com gelo.",
   },
   {
     nome: "Caramel Macchiato",
     preco: 16.90,
     categoria: "bebidas",
-    imagem: "",
+    imagem: "/bebidas/caramel.jpg",
     descricao: "Espresso, leite cremoso e uma dose generosa de caramelo artesanal."
   },
   {
     nome: "Cappuccino Italiano",
     preco: 12.00,
     categoria: "bebidas",
-    imagem: "",
+    imagem: "/bebidas/cappuccino.jpg",
     descricao: "O clássico inconfundível. 1/3 espresso, 1/3 leite, 1/3 espuma densa."
   },
   {
     nome: "Smoothie Glow",
     preco: 21.90,
     categoria: "bebidas",
-    imagem: "",
+    imagem: "/bebidas/smoothie.jpg",
     descricao: "Morango, banana, colágeno e água de coco. Beleza de dentro para fora."
   },
   {
     nome: "Chai Latte Spice",
     preco: 17.50,
     categoria: "bebidas",
-    imagem: "",
+    imagem: "/bebidas/chai.jpg",
     descricao: "Mix de especiarias indianas, chá preto e leite. Conforto em uma xícara."
   },
 

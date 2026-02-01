@@ -1,5 +1,6 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function DetalheBebida({ params }: { params: Promise<{ nome: string }> }) {
 
@@ -11,17 +12,24 @@ export default async function DetalheBebida({ params }: { params: Promise<{ nome
   if (!produto) return <div>Produto não encontrado</div>;
 
   return (
-    <div className="p-6 md:p-12 max-w-4xl mx-auto animate-fade-in">
+    <div className="p-6 md:p-12 max-w-4xl mx-auto animate-fade-in flex flex-col">
+
       {/* Botão Voltar para BEBIDAS */}
       <Link href="/bebidas" className="inline-flex items-center text-coffee/60 hover:text-rose mb-8 font-medium">
         ← Voltar para Bebidas
       </Link>
-
+      
         {/* Foto do Produto */}
-      <div className="bg-white rounded-3xl shadow-sm border border-sand/30 overflow-hidden flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 h-64 md:h-auto bg-coffee/5 flex items-center justify-center relative">
-             <span className="text-8xl opacity-20">bebida</span>
+        <div className="relative md:w-[71.25%] md:h-76 w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex  overflow-hidden ">
+            <Image 
+            src={produto.imagem}      
+            alt={produto.nome}       
+            fill                  
+            className="object-cover group-hover:scale-110 transition-transform duration-500 "
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
         </div>
+        
 
         {/* Detalhes do Produto */}
         <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
@@ -37,6 +45,6 @@ export default async function DetalheBebida({ params }: { params: Promise<{ nome
             </div>
         </div>
       </div>
-    </div>
+    
   );
 }

@@ -46,7 +46,7 @@ export default function ComidasPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
       
-  </div>
+            </div>
 
             {/* Informações do Item */}
             <div className="flex flex-col gap-1">

@@ -1,5 +1,6 @@
 import { menuItems } from "@/dados/cardapio";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function DetalheComida({ params }: { params: Promise<{ nome: string }> }) {
 
@@ -18,9 +19,14 @@ export default async function DetalheComida({ params }: { params: Promise<{ nome
       </Link>
 
         {/* Foto do Produto */}
-      <div className="bg-white rounded-3xl shadow-sm border border-sand/30 overflow-hidden flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 h-64 md:h-auto bg-[#F8F6F2] flex items-center justify-center relative">
-             <span className="text-8xl opacity-20">comida</span>
+        <div className="relative md:w-[71.25%] md:h-76 w-full h-52 bg-[#F8F6F2] rounded-2xl mb-5 flex  overflow-hidden ">
+            <Image 
+            src={produto.imagem}      
+            alt={produto.nome}       
+            fill                  
+            className="object-cover group-hover:scale-110 transition-transform duration-500 "
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
         </div>
 
         {/* Detalhes do Produto */}
@@ -36,7 +42,6 @@ export default async function DetalheComida({ params }: { params: Promise<{ nome
                 <button className="px-8 py-3 bg-coffee text-white rounded-xl font-bold hover:bg-rose transition-colors shadow-lg shadow-coffee/20">Adicionar</button>
             </div>
         </div>
-      </div>
     </div>
   );
 }

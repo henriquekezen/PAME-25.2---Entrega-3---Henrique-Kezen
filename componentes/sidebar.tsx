@@ -54,7 +54,7 @@ export default function Sidebar() {
 
           <div className="border-t border-sand/20 my-4"></div>
 
-          {/*Cardápio */}
+          {/*Cardápio e favoritos */}
           <SidebarLink 
             href="/comidas" 
             label="Comidas" 
@@ -65,6 +65,10 @@ export default function Sidebar() {
             label="Bebidas" 
             active={pathname === "/bebidas"} 
           />
+          <SidebarLink 
+            href="/favoritos" 
+            label="Favoritos ❤" 
+            active={pathname === "/favoritos"} />
         </ul>
       </nav>
       </main>
