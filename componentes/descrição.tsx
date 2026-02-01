@@ -51,10 +51,10 @@ export default function AboutSection() {
       >
         <div className="pt-2 border-t border-coffee/10 text-coffee/80 leading-relaxed text-sm md:text-base">
           <p className="mb-4">
-            A Clean Girl Café & Co...
+            Mais do que uma cafeteria;um convite para desacelerar e transformar a rotina diária em um verdadeiro ritual de autocuidado.Um refúgio minimalista e acolhedor, onde a estética encontra o conforto.
           </p>
           <p>
-           Mais bla bla bla
+           Nossa curadoria gastronômica une saúde e indulgência em perfeita harmonia, utilizando ingredientes frescos e naturais em receitas que nutrem o corpo e encantam os olhos. Do café de origem selecionada ao brunch artesanal, cada item do nosso menu foi pensado para oferecer uma experiência leve, saborosa e sofisticada, provando que se sentir bem é o melhor estilo de vida.
           </p>
         </div>
       </div>

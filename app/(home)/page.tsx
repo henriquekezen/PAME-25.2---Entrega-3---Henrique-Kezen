@@ -50,18 +50,24 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row items-center gap-8">
                 
-                <div className="w-full md:w-1/2 h-48 bg-rose/10 rounded-2xl flex items-center text-6xl shadow-inner">
-                    {/* Imagem a ser adicionada*/}
+                <div className="relative w-full md:w-1/2 h-48 bg-rose/10 rounded-2xl flex overflow-hidden text-6xl shadow-inner">
+                    <Image
+                      src="/dia.jpg" 
+                      alt="prato do dia."
+                      fill
+                      className="object-cover object-center md:object-start"
+                      priority 
+                    />
                 </div>
 
 
                 <div className="flex-1 text-center md:text-left">
-                    <h2 className="text-3xl font-bold text-white mb-2">Nome do Item</h2>
+                    <h2 className="text-3xl font-bold text-white mb-2">Red Velvet Clean</h2>
                     <p className="text-white/70 mb-6 leading-relaxed">
-                        Descrição breve do item.
+                        A combinação perfeita entre suavidade e sabor. Massa aveludada com toque da casa.
                     </p>
                     <Link
-                        href="/comidas" // Redireciona para o menu do item
+                        href="/comidas/Red Velvet Clean" // Redireciona para o menu do item
                         className="inline-block w-full md:w-auto px-8 py-3 bg-coffee text-white rounded-xl font-semibold hover:bg-[#f07f83] transition-colors shadow-lg shadow-coffee/20"
                     >
                         Experimentar Agora
