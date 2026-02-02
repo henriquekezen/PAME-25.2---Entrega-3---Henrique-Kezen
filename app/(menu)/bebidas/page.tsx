@@ -1,4 +1,7 @@
+"use client";
 import { menuItems } from "@/dados/cardapio";
+import { useState } from "react";
+import FiltroOrdenacao, { TipoOrdenacao } from "@/componentes/ordena";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -6,6 +9,13 @@ import Image from "next/image";
 export default function BebidasPage() {
   // Filtra apenas o que é bebida
   const bebidas = menuItems.filter((item) => item.categoria === "bebida");
+  //Ordena
+  const [ordenacao, setOrdenacao] = useState<TipoOrdenacao>("relevancia");
+  const bebidasOrdenadas = [...bebidas].sort((a, b) => {
+    if (ordenacao === "menor") return a.preco - b.preco;
+    if (ordenacao === "maior") return b.preco - a.preco;
+    return 0;
+  });
 
   return (
     <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">
@@ -19,14 +29,19 @@ export default function BebidasPage() {
         className="object-cover object-center md:object-start"
         priority 
       />
-
-
       </header>
 
+      <div className="flex justify-end mt-[-30] mb-4">
+        <FiltroOrdenacao 
+          atual={ordenacao} 
+          onMudar={setOrdenacao} 
+      />
+      </div>
+       
       {/* Itens */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        {bebidas.map((item) => (
+        {bebidasOrdenadas.map((item) => (
           <div 
             key={item.nome} // Usando o Nome como ID 
             className="group bg-white p-5 rounded-3xl shadow-sm border border-sand/30 hover:shadow-md hover:border-coffee/30 transition-all duration-300 flex flex-col"

@@ -1,10 +1,22 @@
+"use client";
 import { menuItems } from "@/dados/cardapio";
+import { useState } from "react";
+import FiltroOrdenacao, { TipoOrdenacao } from "@/componentes/ordena";
 import Link from "next/link";
 import Image from "next/image";
+
 
 export default function ComidasPage() {
   // Filtra apenas o que é comida
   const comidas = menuItems.filter((item) => item.categoria === "comida");
+
+  //Ordena
+  const [ordenacao, setOrdenacao] = useState<TipoOrdenacao>("relevancia");
+  const comidasOrdenadas = [...comidas].sort((a, b) => {
+    if (ordenacao === "menor") return a.preco - b.preco;
+    if (ordenacao === "maior") return b.preco - a.preco;
+    return 0;
+  });
 
   return (
     <section className="bg-[#E8E2D2] p-6 md:p-10 w-full max-w-7xl mx-auto animate-fade-in">
@@ -20,9 +32,14 @@ export default function ComidasPage() {
               className="object-cover object-center md:object-start"
               priority 
             />
-       
-
       </header>
+
+      <div className="flex justify-end mt-[-30] mb-4">
+          <FiltroOrdenacao 
+              atual={ordenacao} 
+              onMudar={setOrdenacao} 
+          />
+      </div>
 
       {/* Itens*/}
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -62,7 +79,7 @@ export default function ComidasPage() {
             </Link>
           </div>
         ))}
-
+    
       </main>
     </section>
   );

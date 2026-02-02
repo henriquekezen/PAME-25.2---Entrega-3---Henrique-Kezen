@@ -3,10 +3,19 @@ import Link from "next/link";
 import { useFavorites } from "@/componentes/favoritos";
 import {menuItems} from "@/dados/cardapio";
 import Image from "next/image";
+import FiltroOrdenacao, { TipoOrdenacao } from "@/componentes/ordena";
+import { useState } from "react";
 
 export default function FavoritosPage() {
     const { favorites } = useFavorites();
     const produtosFavoritos = menuItems.filter((item) => favorites.includes(item.nome));
+    //ordenando de diferentes maneiras
+    const [ordenacao, setOrdenacao] = useState<TipoOrdenacao>("relevancia");
+    const produtosOrdenados = [...produtosFavoritos].sort((a, b) => {
+    if (ordenacao === "menor") return a.preco - b.preco;
+    if (ordenacao === "maior") return b.preco - a.preco;
+    return 0;
+  });
 
     //Verifica se a lista de favoritos está vazia
     if (favorites.length === 0)
@@ -55,11 +64,18 @@ export default function FavoritosPage() {
                 className="object-cover object-center md:object-start"
                 priority 
                 />
+
         </header>
+        <div className="flex justify-end mt-[-30] mb-4">
+            <FiltroOrdenacao 
+                atual={ordenacao} 
+                onMudar={setOrdenacao} 
+            />
+        </div>
 
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        {produtosFavoritos.map((item) => {
+        {produtosOrdenados.map((item) => {
           
           // Define o destino por meio da categoria do item
           const linkHref = item.categoria === "bebida" 
